@@ -4,10 +4,10 @@ import java.io.File;
 import java.util.Iterator;
 import java.util.Set;
 
-import savetofile.prog.fhbgds.Save;
+import savetofile.prog.fhbgds.IO;
 
 public class Actions {
-	static Save save = new Save();
+	static IO save = new IO();
 	
 	public static void printGrades(){
 		if(EBSynergy.grades.isEmpty()){

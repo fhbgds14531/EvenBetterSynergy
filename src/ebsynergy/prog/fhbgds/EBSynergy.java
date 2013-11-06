@@ -8,10 +8,10 @@ import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import savetofile.prog.fhbgds.Save;
+import savetofile.prog.fhbgds.IO;
 
 public class EBSynergy {
-	private static Save save = new Save();
+	private static IO save = new IO();
 	
 	public static HashMap<String, String[]> grades = new HashMap<String, String[]>();
 
@@ -25,7 +25,7 @@ public class EBSynergy {
 	public static void initUI(){
 		try {
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
