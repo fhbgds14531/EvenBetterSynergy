@@ -7,7 +7,7 @@ import java.util.Set;
 import savetofile.prog.fhbgds.IO;
 
 public class Actions {
-	static IO save = new IO();
+	
 	
 	public static void printGrades(){
 		if(EBSynergy.grades.isEmpty()){
@@ -32,7 +32,7 @@ public class Actions {
 					if(names[i] != null){
 						UI.outputArea.append(names[i] + ":\n");
 						String[] grades = EBSynergy.grades.get(names[i]);
-						for(int i1 = 0; i1 <= 6; i1++){
+						for(int i1 = 0; i1 <= 7; i1++){
 							UI.outputArea.append(grades[i1] + "\n");
 							if(i1 > grades.length){
 								i1 = 0;
@@ -52,6 +52,7 @@ public class Actions {
 		File f = new File("new.txt");
 		if(f.exists()){
 			try{
+				IO save = new IO();
 				String[] loaded = save.loadArrayFromTxt("new.txt");
 				String name = null;
 				
@@ -80,6 +81,7 @@ public class Actions {
 			return;
 		}
 		try {
+			IO save = new IO();
 			EBSynergy.grades = save.load("data.ebsyn");
 			UI.outputArea.append("Successfully loaded from \"data.ebsyn\"\n");
 		} catch (Exception e) {
@@ -90,6 +92,7 @@ public class Actions {
 	
 	public static void save(){
 		try {
+			IO save = new IO();
 			save.save(EBSynergy.grades, "data.ebsyn");
 			UI.outputArea.append("Saved!\n");
 			System.out.println("Saved data to \"data.ebsyn\"");

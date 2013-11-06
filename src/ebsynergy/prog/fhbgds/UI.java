@@ -105,12 +105,19 @@ public class UI extends JFrame {
         );
 
         pack();
-    }                        
+    }
+    
+    protected static void disableAllButtons(){
+    	printButton.setEnabled(false);
+    	exitButton.setEnabled(false);
+    	loadButton.setEnabled(false);
+    	saveButton.setEnabled(false);
+    }
 
-    private JButton printButton;
-    private JButton exitButton;
-    private JButton saveButton;
-    private JButton loadButton;
+    private static JButton printButton;
+    private static JButton exitButton;
+    private static JButton saveButton;
+    private static JButton loadButton;
     private JScrollPane scrollPane;
     public static JTextArea outputArea;
 }
